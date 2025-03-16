@@ -1,6 +1,6 @@
 # 💱 Conversor de Moedas: Real para Dólar 💵
 
-Este é um conversor de moedas desenvolvido em **PHP 8.4**, **HTML** e **CSS** que permite a conversão de valores em Reais (BRL) para Dólares Americanos (USD). O projeto utiliza a **API do Banco Central do Brasil** para obter a taxa de câmbio atual e realizar a conversão de forma precisa e confiável.
+Este é um conversor de moedas desenvolvido em **PHP** que permite a conversão de valores em Reais (BRL) para Dólares Americanos (USD). O projeto utiliza a **API do Banco Central do Brasil** para obter a taxa de câmbio atual e realizar a conversão de forma precisa.
 
 ---
 
