@@ -12,23 +12,14 @@
       <h1>Valor Convertido</h1>
     </header>
     <?php 
-
-    //DATA client
-
-    $dateStart = date("m-d-Y", strtotime("-7 days"));
-    $dateEnd = date("m-d-Y");
-
-    // API Banco central do Brasil
-
-    $url = 'https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@dataInicial=\''.$dateStart.'\'&@dataFinalCotacao=\''.$dateEnd.'\'&$top=1&$format=json&$select=cotacaoCompra,dataHoraCotacao';
-
-    //Decodificando json e fazendo o request 
-    
-    $data = json_decode(file_get_contents($url), true);
+    require __DIR__ ."api.php";
 
     //Conversão e coleta de dados
+
     $valueClient = $_GET["valueClient"] ?? 0;
+
     $cotacao = $data["value"][0]["cotacaoCompra"];
+    
     $conversion = $valueClient / $cotacao;
     echo "<ul><li>Valor em Real <strong>R$".number_format($valueClient, 2, ",", ".")."</strong></li>";
     echo "<br><li>Valor convertido <strong>US$".number_format($conversion, 2,",",".")."</strong></li></ul>";
